@@ -1,0 +1,40 @@
+function _cPM.LoadMenuTP(property)
+    CreateThread(function()
+        while _cPM.MenuOpenTP do
+            Wait(1)
+            RageUI.IsVisible(_MenuTP, function()
+                _cM.LineMenu()
+                _cPM.MenuTP(property)
+                _cM.LineMenu()
+            end)
+        end
+    end)
+end
+
+function _cPM.LoadMenuCoffre(property, owner)
+    CreateThread(function()
+        while _cPM.MenuOpenCoffre do
+            Wait(1)
+            RageUI.IsVisible(_MenuCoffre, function()
+                _cM.LineMenu()
+                _cPM.MenuCoffre(property, owner)
+                _cM.LineMenu()
+            end)
+            RageUI.IsVisible(_SubMenuCoffre.Invite, function()
+                _cM.LineMenu()
+                _cPM.MenuInvite(property, owner)
+                _cM.LineMenu()
+            end)
+            RageUI.IsVisible(_SubMenuCoffre.DepositObject, function()
+                _cM.LineMenu()
+                _cPM.MenuDeposit(property, owner)
+                _cM.LineMenu()
+            end)
+            RageUI.IsVisible(_SubMenuCoffre.RemoveObject, function()
+                _cM.LineMenu()
+                _cPM.MenuRemove(property, owner)
+                _cM.LineMenu()
+            end)
+        end
+    end)
+end

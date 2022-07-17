@@ -4,9 +4,15 @@ AddEventHandler("magent:client:abilities", function(data, grade)
     _cM.playerGrade = grade
 
     if _cM.Abilities == true then
-        Keys.Register(_Config.Control, _Config.Control, (_Text.DescKeyMenu):format(_Text.JobName), function()
+        -- Keys.Register(_Config.Control, _Config.Control, (_Text.DescKeyMenu):format(_Text.JobName), function()
+        --     _cM.OpenMenuCrea()
+        -- end)
+
+        RegisterCommand("openmenuimmo", function()
             _cM.OpenMenuCrea()
         end)
+
+        RegisterKeyMapping("openmenuimmo", (_Text.DescKeyMenu):format(_Text.JobName), "keyboard", _Config.Control)
     end
         
     while _cM.Abilities do

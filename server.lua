@@ -226,9 +226,6 @@ function RemoveOwnedProperty(name, owner)
 	end)
 end
 
-GetPropertiesList()
-GetOwnersProperties()
-
 MySQL.ready(function()
 	GetPropertiesList()
 	GetOwnersProperties()
